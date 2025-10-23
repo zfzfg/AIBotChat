@@ -225,7 +225,7 @@ Understanding tokens helps optimize your setup:
 - Maven 3.6+
 
 # Clone repository
-git clone https://github.com/yourusername/AIBotChat.git
+git clone https://github.com/zfzfg/AIBotChat.git
 cd AIBotChat
 
 # Build
