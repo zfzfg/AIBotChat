@@ -1,0 +1,51 @@
+# ═══════════════════════════════════════════════════════════════
+#  AIBotChat Configuration
+#  A Sterra.Online Project - https://sterra.online
+# ═══════════════════════════════════════════════════════════════
+
+api:
+  # API URL - Choose the correct endpoint for your setup
+  # For OpenAI-compatible API (recommended):
+  url: "http://localhost:5000/v1/chat/completions"
+  
+  # Alternative endpoints:
+  # - Local completion: "http://localhost:5000/v1/completions"
+  # - text-generation-webui: "http://localhost:7860/api/v1/generate"
+  # - Remote server: "http://your-server.com:5000/v1/chat/completions"
+  
+  # Character name (must exist in text-generation-webui/characters/)
+  # The character defines the AI's personality and behavior
+  character: "Assistant"
+  
+  # Maximum tokens for response (100-500 recommended)
+  # Higher = longer responses, but may cost more
+  max-tokens: 250
+  
+  # Temperature (0.0-1.0)
+  # Lower = more focused and deterministic
+  # Higher = more creative and random
+  temperature: 0.7
+  
+  # Stop sequences - AI will stop generating when it encounters these
+  # Prevents the AI from generating fake user messages
+  stop-sequences:
+    - "USER:"
+    - "User:"
+    - "\nUSER:"
+    - "\nUser:"
+    - "ASSISTANT:"
+    - "Assistant:"
+    - "\nASSISTANT:"
+    - "\nAssistant:"
+    - "Spieler:"
+    - "\nSpieler:"
+    - "\n\n\n"
+
+# Cooldown between AI requests (in seconds)
+# Prevents spam and protects your API
+cooldown-seconds: 3
+
+# Require permission for /ai command?
+# false: Everyone can use it (default)
+# true: Only players with 'aibotchat.use' permission can use it
+require-permission: false
